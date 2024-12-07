@@ -1,0 +1,1643 @@
+const examples = 
+    [{
+   
+        "NumPret": "1",
+        "montantPret": 5000,
+        "dateEffet": "2024-05-02",
+        "duree": 36,
+        "typePret": "ANSEJ",
+        "tauxInteret": 5,
+        "montantEcheance": 150,
+     
+      "compte": {
+        "NumCompte": "1010012311",
+        "dateOuverture": "2023-01-15",
+        "etatCompte": "ACTIF",
+        "Solde": 10000,
+        "client": {
+          "NumClient": "CL00167851",
+          "NomClient": "John Doe",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Main St, City",
+          "NumTel": "+1234567890",
+          "Email": "john.doe@example.com"
+        },
+        "agence": {
+          "NumAgence": "101",
+          "nomAgence": "Main Street Branch",
+          "adresseAgence": "123 Main St, City",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "1",
+            "nomSucc": "CityBank-Branch-capital",
+            "adresseSucc": "456 Elm St, City",
+            "region": "NORD"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP001",
+            "NatureOperation": "Dépôt",
+            "montantOp": 200,
+            "DateOp": "2024-05-02",
+            "Observation": "Deposit to account"
+          }
+        ]
+        
+      }
+  },
+    
+  {
+      "NumPret": "2",
+      "montantPret": 7000,
+      "dateEffet": "2024-06-01",
+      "duree": 24,
+      "typePret": "Véhicule",
+      "tauxInteret": 6,
+      "montantEcheance": 290,
+      "compte": {
+        "NumCompte": "1010022311", 
+        "dateOuverture": "2023-03-20",
+        "etatCompte": "ACTIF",
+        "Solde": 15000,
+        "client": {
+          "NumClient": "CL00234567",
+          "NomClient": "Jane Smith",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Elm St, City",
+          "NumTel": "+1987654321",
+          "Email": "jane.smith@example.com"
+        },
+        "agence": {
+          "NumAgence": "101",
+          "nomAgence": "Main Street Branch",
+          "adresseAgence": "123 Main St, City",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "1",
+            "nomSucc": "CityBank-Branch-capital",
+            "adresseSucc": "456 Elm St, City",
+            "region": "NORD"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP002",
+            "NatureOperation": "Retrait",
+            "montantOp": 500,
+            "DateOp": "2024-06-02",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "3",
+      "montantPret": 10000,
+      "dateEffet": "2024-07-15",
+      "duree": 48,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.5,
+      "montantEcheance": 260,
+      "compte": {
+        "NumCompte": "3010010504",
+        "dateOuverture": "2022-10-10",
+        "etatCompte": "ACTIF",
+        "Solde": 25000,
+        "client": {
+          "NumClient": "CL00345678",
+          "NomClient": "Alice Johnson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Elm St, Town",
+          "NumTel": "+1122334455",
+          "Email": "alice.johnson@example.com"
+        },
+        "agence": {
+          "NumAgence": "301",
+          "nomAgence": "Elm Street Branch",
+          "adresseAgence": "789 Elm St, Town",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "3",
+            "nomSucc": "TownBank-Branch-capital",
+            "adresseSucc": "789 Elm St, Town",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP003",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1000,
+            "DateOp": "2024-07-16",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "4",
+      "montantPret": 8000,
+      "dateEffet": "2024-08-20",
+      "duree": 60,
+      "typePret": "ANJEM",
+      "tauxInteret": 6.5,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "3040010804",
+        "dateOuverture": "2023-05-05",
+        "etatCompte": "ACTIF",
+        "Solde": 18000,
+        "client": {
+          "NumClient": "CL00456789",
+          "NomClient": "Bob Williams",
+          "TypeClient": "Particulier",
+          "AdresseClient": "987 Oak St, Village",
+          "NumTel": "+9988776655",
+          "Email": "bob.williams@example.com"
+        },
+        "agence": {
+          "NumAgence": "304",
+          "nomAgence": "Oak Street Branch",
+          "adresseAgence": "987 Oak St, Village",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "3",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "987 Oak St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP004",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1500,
+            "DateOp": "2024-08-21",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "6",
+      "montantPret": 9500,
+      "dateEffet": "2024-10-30",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.5,
+      "montantEcheance": 300,
+      "compte": {
+        "NumCompte": "4010010902",
+        "dateOuverture": "2023-09-15",
+        "etatCompte": "ACTIF",
+        "Solde": 25000,
+        "client": {
+          "NumClient": "CL00678901",
+          "NomClient": "William Davis",
+          "TypeClient": "Particulier",
+          "AdresseClient": "321 Maple St, Suburb",
+          "NumTel": "+5544332211",
+          "Email": "william.davis@example.com"
+        },
+        "agence": {
+          "NumAgence": "401",
+          "nomAgence": "Maple Street Branch",
+          "adresseAgence": "321 Maple St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "4",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "321 Maple St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP006",
+            "NatureOperation": "Dépôt",
+            "montantOp": 2000,
+            "DateOp": "2024-10-31",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "7",
+      "montantPret": 8500,
+      "dateEffet": "2024-11-20",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 6.2,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "4030011104",
+        "dateOuverture": "2023-06-15",
+        "etatCompte": "ACTIF",
+        "Solde": 22000,
+        "client": {
+          "NumClient": "CL00789012",
+          "NomClient": "Sophia Martinez",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Birch St, Town",
+          "NumTel": "+4433221100",
+          "Email": "sophia.martinez@example.com"
+        },
+        "agence": {
+          "NumAgence": "403",
+          "nomAgence": "Birch Street Branch",
+          "adresseAgence": "456 Birch St, Town",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "4",
+            "nomSucc": "TownBank-Branch-capital",
+            "adresseSucc": "456 Birch St, Town",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP007",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2024-11-21",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "8",
+      "montantPret": 9200,
+      "dateEffet": "2025-01-05",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.8,
+      "montantEcheance": 250,
+      "compte": {
+        "NumCompte": "4040011201",
+        "dateOuverture": "2023-08-20",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL00890123",
+          "NomClient": "Oliver Taylor",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Cedar St, Suburb",
+          "NumTel": "+9988776655",
+          "Email": "oliver.taylor@example.com"
+        },
+        "agence": {
+          "NumAgence": "404",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "789 Cedar St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "4",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "789 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP008",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2025-01-06",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "9",
+      "montantPret": 7800,
+      "dateEffet": "2025-02-10",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.2,
+      "montantEcheance": 230,
+      "compte": {
+        "NumCompte": "4040011202",
+        "dateOuverture": "2023-09-30",
+        "etatCompte": "ACTIF",
+        "Solde": 26000,
+        "client": {
+          "NumClient": "CL00901234",
+          "NomClient": "Mia Wilson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "987 Maple St, Town",
+          "NumTel": "+7766554433",
+          "Email": "mia.wilson@example.com"
+        },
+        "agence": {
+          "NumAgence": "404",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "789 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "4",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "789 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP009",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1800,
+            "DateOp": "2025-02-11",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "10",
+      "montantPret": 7500,
+      "dateEffet": "2025-03-15",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 6,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "6040012002",
+        "dateOuverture": "2023-07-25",
+        "etatCompte": "ACTIF",
+        "Solde": 20000,
+        "client": {
+          "NumClient": "CL01012345",
+          "NomClient": "Ethan Anderson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Pine St, Suburb",
+          "NumTel": "+1122334455",
+          "Email": "ethan.anderson@example.com"
+        },
+        "agence": {
+          "NumAgence": "604",
+          "nomAgence": "Pine3 Street Branch",
+          "adresseAgence": "456 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP010",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1000,
+            "DateOp": "2025-03-16",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "11",
+      "montantPret": 8500,
+      "dateEffet": "2025-04-20",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.5,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "6040012003",
+        "dateOuverture": "2023-09-10",
+        "etatCompte": "ACTIF",
+        "Solde": 24000,
+        "client": {
+          "NumClient": "CL01123456",
+          "NomClient": "Olivia Garcia",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Elm St, Town",
+          "NumTel": "+9988776655",
+          "Email": "olivia.garcia@example.com"
+        },
+        "agence": {
+          "NumAgence": "604",
+          "nomAgence": "Pine3 Street Branch",
+          "adresseAgence": "456 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP011",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2025-04-21",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "12",
+      "montantPret": 9200,
+      "dateEffet": "2025-05-25",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "6040012004",
+        "dateOuverture": "2023-12-01",
+        "etatCompte": "ACTIF",
+        "Solde": 26000,
+        "client": {
+          "NumClient": "CL01234567",
+          "NomClient": "Noah Martinez",
+          "TypeClient": "Particulier",
+          "AdresseClient": "987 Oak St, Village",
+          "NumTel": "+7766554433",
+          "Email": "noah.martinez@example.com"
+        },
+        "agence": {
+          "NumAgence": "604",
+          "nomAgence": "Pine3 Street Branch",
+          "adresseAgence": "456 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP012",
+            "NatureOperation": "Dépôt",
+            "montantOp": 2000,
+            "DateOp": "2025-05-26",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "13",
+      "montantPret": 7800,
+      "dateEffet": "2025-06-10",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 5.8,
+      "montantEcheance": 210,
+      "compte": {
+        "NumCompte": "6010011703",
+        "dateOuverture": "2023-08-15",
+        "etatCompte": "ACTIF",
+        "Solde": 19000,
+        "client": {
+          "NumClient": "CL01345678",
+          "NomClient": "Liam Brown",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Cedar St, Suburb",
+          "NumTel": "+1122334455",
+          "Email": "liam.brown@example.com"
+        },
+        "agence": {
+          "NumAgence": "601",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "456 Cedar St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP013",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1100,
+            "DateOp": "2025-06-11",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "14",
+      "montantPret": 9200,
+      "dateEffet": "2025-07-15",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.7,
+      "montantEcheance": 240,
+      "compte": {
+        "NumCompte": "6010011704",
+        "dateOuverture": "2023-10-05",
+        "etatCompte": "ACTIF",
+        "Solde": 22000,
+        "client": {
+          "NumClient": "CL01456789",
+          "NomClient": "Ava Wilson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Maple St, Town",
+          "NumTel": "+9988776655",
+          "Email": "ava.wilson@example.com"
+        },
+        "agence": {
+          "NumAgence": "601",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "456 Cedar St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP014",
+            "NatureOperation": "Retrait",
+            "montantOp": 1300,
+            "DateOp": "2025-07-16",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "15",
+      "montantPret": 8500,
+      "dateEffet": "2025-08-20",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.3,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "6020011801",
+        "dateOuverture": "2023-11-20",
+        "etatCompte": "ACTIF",
+        "Solde": 25000,
+        "client": {
+          "NumClient": "CL01567890",
+          "NomClient": "Isabella Garcia",
+          "TypeClient": "Particulier",
+          "AdresseClient": "987 Pine St, Village",
+          "NumTel": "+1122334455",
+          "Email": "isabella.garcia@example.com"
+        },
+        "agence": {
+          "NumAgence": "602",
+          "nomAgence": "Pine2 Street Branch",
+          "adresseAgence": "987 Pine St, Village",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "987 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP015",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1500,
+            "DateOp": "2025-08-21",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "16",
+      "montantPret": 9200,
+      "dateEffet": "2025-09-25",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "6020011802",
+        "dateOuverture": "2023-12-15",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL01678901",
+          "NomClient": "Mason Martinez",
+          "TypeClient": "Particulier",
+          "AdresseClient": "654 Elm St, Suburb",
+          "NumTel": "+9988776655",
+          "Email": "mason.martinez@example.com"
+        },
+        "agence": {
+          "NumAgence": "602",
+          "nomAgence": "Pine2 Street Branch",
+          "adresseAgence": "987 Pine St, Village",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "987 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP016",
+            "NatureOperation": "Retrait",
+            "montantOp": 1800,
+            "DateOp": "2025-09-26",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "17",
+      "montantPret": 7500,
+      "dateEffet": "2025-10-30",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.8,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "6020011803",
+        "dateOuverture": "2024-01-10",
+        "etatCompte": "ACTIF",
+        "Solde": 23000,
+        "client": {
+          "NumClient": "CL01789012",
+          "NomClient": "Emma Brown",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Oak St, Town",
+          "NumTel": "+7766554433",
+          "Email": "emma.brown@example.com"
+        },
+        "agence": {
+          "NumAgence": "602",
+          "nomAgence": "Pine2 Street Branch",
+          "adresseAgence": "987 Pine St, Village",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "987 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP017",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2025-10-31",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "18",
+      "montantPret": 7800,
+      "dateEffet": "2025-11-10",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 5.8,
+      "montantEcheance": 210,
+      "compte": {
+        "NumCompte": "5030011504",
+        "dateOuverture": "2024-05-20",
+        "etatCompte": "ACTIF",
+        "Solde": 19500,
+        "client": {
+          "NumClient": "CL01890123",
+          "NomClient": "Sophia Taylor",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Pine St, Village",
+          "NumTel": "+1122334455",
+          "Email": "sophia.taylor@example.com"
+        },
+        "agence": {
+          "NumAgence": "503",
+          "nomAgence": "Pine1 Street Branch",
+          "adresseAgence": "789 Pine St, Village",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "789 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP018",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2025-11-11",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "19",
+      "montantPret": 8500,
+      "dateEffet": "2025-12-15",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.3,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "5040011601",
+        "dateOuverture": "2024-06-15",
+        "etatCompte": "ACTIF",
+        "Solde": 24000,
+        "client": {
+          "NumClient": "CL01901234",
+          "NomClient": "James Rodriguez",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Elm St, Suburb",
+          "NumTel": "+9988776655",
+          "Email": "james.rodriguez@example.com"
+        },
+        "agence": {
+          "NumAgence": "504",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "123 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP019",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2025-12-16",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "20",
+      "montantPret": 9200,
+      "dateEffet": "2026-01-20",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "5040011602",
+        "dateOuverture": "2024-07-10",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL02012345",
+          "NomClient": "Amelia Brown",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Oak St, Town",
+          "NumTel": "+1122334455",
+          "Email": "amelia.brown@example.com"
+        },
+        "agence": {
+          "NumAgence": "504",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "123 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP020",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1800,
+            "DateOp": "2026-01-21",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "21",
+      "montantPret": 7500,
+      "dateEffet": "2026-02-25",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.8,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "5040011603",
+        "dateOuverture": "2024-08-01",
+        "etatCompte": "ACTIF",
+        "Solde": 23000,
+        "client": {
+          "NumClient": "CL02123456",
+          "NomClient": "Oliver Garcia",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Pine St, Suburb",
+          "NumTel": "+7766554433",
+          "Email": "oliver.garcia@example.com"
+        },
+        "agence": {
+          "NumAgence": "504",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "123 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP021",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2026-02-26",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "22",
+      "montantPret": 9200,
+      "dateEffet": "2026-03-30",
+      "duree": 48,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.3,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "5040011604",
+        "dateOuverture": "2024-09-05",
+        "etatCompte": "ACTIF",
+        "Solde": 24000,
+        "client": {
+          "NumClient": "CL02234567",
+          "NomClient": "Sophia Johnson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Cedar St, Town",
+          "NumTel": "+9988776655",
+          "Email": "sophia.johnson@example.com"
+        },
+        "agence": {
+          "NumAgence": "504",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "123 Pine St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Pine St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP022",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2026-03-31",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "23",
+      "montantPret": 7800,
+      "dateEffet": "2026-04-10",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 5.8,
+      "montantEcheance": 210,
+      "compte": {
+        "NumCompte": "6010011701",
+        "dateOuverture": "2024-10-20",
+        "etatCompte": "ACTIF",
+        "Solde": 19500,
+        "client": {
+          "NumClient": "CL02345678",
+          "NomClient": "Ethan Wilson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Oak St, Suburb",
+          "NumTel": "+1122334455",
+          "Email": "ethan.wilson@example.com"
+        },
+        "agence": {
+          "NumAgence": "601",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "456 Cedar St, Suburb",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "6",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "456 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP023",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2026-04-11",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "24",
+      "montantPret": 7800,
+      "dateEffet": "2005-05-15",
+      "duree": 48,
+      "typePret": "ANJEM",
+      "tauxInteret": 5.8,
+      "montantEcheance": 210,
+      "compte": {
+        "NumCompte": "2030010301",
+        "dateOuverture": "2004-01-20",
+        "etatCompte": "ACTIF",
+        "Solde": 19500,
+        "client": {
+          "NumClient": "CL02456789",
+          "NomClient": "Ava Miller",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Maple St, Village",
+          "NumTel": "+1122334455",
+          "Email": "ava.miller@example.com"
+        },
+        "agence": {
+          "NumAgence": "203",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP024",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1200,
+            "DateOp": "2005-05-16",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "25",
+      "montantPret": 8500,
+      "dateEffet": "2006-07-20",
+      "duree": 36,
+      "typePret": "Véhicule",
+      "tauxInteret": 5.3,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "2030010302",
+        "dateOuverture": "2004-03-10",
+        "etatCompte": "ACTIF",
+        "Solde": 24000,
+        "client": {
+          "NumClient": "CL02567890",
+          "NomClient": "William Brown",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Pine St, Town",
+          "NumTel": "+9988776655",
+          "Email": "william.brown@example.com"
+        },
+        "agence": {
+          "NumAgence": "203",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP025",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2006-07-21",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "26",
+      "montantPret": 9200,
+      "dateEffet": "2007-09-25",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "2030010303",
+        "dateOuverture": "2004-05-05",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL02678901",
+          "NomClient": "Olivia Wilson",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Cedar St, Suburb",
+          "NumTel": "+7766554433",
+          "Email": "olivia.wilson@example.com"
+        },
+        "agence": {
+          "NumAgence": "203",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP026",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1800,
+            "DateOp": "2007-09-26",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "27",
+      "montantPret": 7500,
+      "dateEffet": "2008-11-30",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.8,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "2030010304",
+        "dateOuverture": "2004-07-15",
+        "etatCompte": "ACTIF",
+        "Solde": 23000,
+        "client": {
+          "NumClient": "CL02789012",
+          "NomClient": "Noah Garcia",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Oak St, Village",
+          "NumTel": "+1122334455",
+          "Email": "noah.garcia@example.com"
+        },
+        "agence": {
+          "NumAgence": "203",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP027",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1600,
+            "DateOp": "2008-12-01",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "28",
+      "montantPret": 9200,
+      "dateEffet": "2000-04-25",
+      "duree": 36,
+      "typePret": "ANSEJ",
+      "tauxInteret": 5.3,
+      "montantEcheance": 270,
+      "compte": {
+        "NumCompte": "2040010401",
+        "dateOuverture": "1998-10-10",
+        "etatCompte": "ACTIF",
+        "Solde": 24000,
+        "client": {
+          "NumClient": "CL02890123",
+          "NomClient": "Sophia Clark",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Pine St, Town",
+          "NumTel": "+9988776655",
+          "Email": "sophia.clark@example.com"
+        },
+        "agence": {
+          "NumAgence": "204",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "456 Pine St, Town",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "TownBank-Branch-capital",
+            "adresseSucc": "456 Pine St, Town",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP028",
+            "NatureOperation": "Retrait",
+            "montantOp": 1500,
+            "DateOp": "2000-04-26",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "31",
+      "montantPret": 9200,
+      "dateEffet": "2002-09-25",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "1050054004",
+        "dateOuverture": "2000-07-05",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL03012345",
+          "NomClient": "Olivia Young",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Cedar St, Suburb",
+          "NumTel": "+7766554433",
+          "Email": "olivia.young@example.com"
+        },
+        "agence": {
+          "NumAgence": "105",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP031",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1800,
+            "DateOp": "2002-09-26",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "32",
+      "montantPret": 9200,
+      "dateEffet": "2004-09-25",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 220,
+      "compte": {
+        "NumCompte": "1050010501",
+        "dateOuverture": "2000-07-05",
+        "etatCompte": "ACTIF",
+        "Solde": 28000,
+        "client": {
+          "NumClient": "CL03012345",
+          "NomClient": "Olivia Young",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Cedar St, Suburb",
+          "NumTel": "+7766554433",
+          "Email": "olivia.young@example.com"
+        },
+        "agence": {
+          "NumAgence": "105",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP031",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1800,
+            "DateOp": "2002-09-26",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  {
+      "NumPret": "33",
+      "montantPret": 7500,
+      "dateEffet": "2003-11-30",
+      "duree": 60,
+      "typePret": "Immobilier",
+      "tauxInteret": 4.8,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "1050012502",
+        "dateOuverture": "2001-05-15",
+        "etatCompte": "ACTIF",
+        "Solde": 23000,
+        "client": {
+          "NumClient": "CL02789017",
+          "NomClient": "Noah Ramirez",
+          "TypeClient": "Particulier",
+          "AdresseClient": "789 Oak St, Village",
+          "NumTel": "+1122334455",
+          "Email": "noah.ram@example.com"
+        },
+        "agence": {
+          "NumAgence": "105",
+          "nomAgence": "Cedar Street Branch",
+          "adresseAgence": "123 Cedar St, Suburb",
+          "categorie": "SECONDAIRE",
+          "succursale": {
+            "NumSucc": "2",
+            "nomSucc": "SuburbBank-Branch-capital",
+            "adresseSucc": "123 Cedar St, Suburb",
+            "region": "EST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP032",
+            "NatureOperation": "Dépôt",
+            "montantOp": 1600,
+            "DateOp": "2003-12-01",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    }
+  ,
+  
+  {
+      "NumPret": "34",
+      "montantPret": 5000,
+      "dateEffet": "2000-01-01",
+      "duree": 36,
+      "typePret": "ANSEJ",
+      "tauxInteret": 5,
+      "montantEcheance": 150,
+      "compte": {
+        "NumCompte": "5030011501",
+        "dateOuverture": "1999-05-20",
+        "etatCompte": "ACTIF",
+        "Solde": 10000,
+        "client": {
+          "NumClient": "CL123456",
+          "NomClient": "Alice",
+          "TypeClient": "Particulier",
+          "AdresseClient": "123 Main St",
+          "NumTel": "+1234567890",
+          "Email": "alice@example.com"
+        },
+        "agence": {
+          "NumAgence": "503",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "789 Pine St, Village",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "789 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP001",
+            "NatureOperation": "Dépôt",
+            "montantOp": 500,
+            "DateOp": "2000-01-02",
+            "Observation": "Deposit to account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "35",
+      "montantPret": 6000,
+      "dateEffet": "2001-02-15",
+      "duree": 48,
+      "typePret": "Immobilier",
+      "tauxInteret": 6,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "5030011502",
+        "dateOuverture": "2000-08-10",
+        "etatCompte": "ACTIF",
+        "Solde": 15000,
+        "client": {
+          "NumClient": "CL234567",
+          "NomClient": "Bob",
+          "TypeClient": "Particulier",
+          "AdresseClient": "456 Elm St",
+          "NumTel": "+9876543210",
+          "Email": "bob@example.com"
+        },
+        "agence": {
+          "NumAgence": "503",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "789 Pine St, Village",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "789 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP002",
+            "NatureOperation": "Retrait",
+            "montantOp": 200,
+            "DateOp": "2001-02-16",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    },
+    {
+      "NumPret": "36",
+      "montantPret": 6500,
+      "dateEffet": "2011-02-15",
+      "duree": 48,
+      "typePret": "ANSEJ",
+      "tauxInteret": 6,
+      "montantEcheance": 200,
+      "compte": {
+        "NumCompte": "5030011502",
+        "dateOuverture": "2000-08-10",
+        "etatCompte": "ACTIF",
+        "Solde": 15000,
+        "client": {
+          "NumClient": "CL234567",
+          "NomClient": "Bob Bobson",
+          "TypeClient": "Entreprise",
+          "AdresseClient": "456 Elm St",
+          "NumTel": "+9876543210",
+          "Email": "bob@example.com"
+        },
+        "agence": {
+          "NumAgence": "503",
+          "nomAgence": "Pine Street Branch",
+          "adresseAgence": "789 Pine St, Village",
+          "categorie": "PRINCIPALE",
+          "succursale": {
+            "NumSucc": "5",
+            "nomSucc": "VillageBank-Branch-capital",
+            "adresseSucc": "789 Pine St, Village",
+            "region": "OUEST"
+          }
+        },
+        "Operations": [
+          {
+            "NumOperation": "OP202",
+            "NatureOperation": "Retrait",
+            "montantOp": 200,
+            "DateOp": "2001-02-16",
+            "Observation": "Withdraw from account"
+          }
+        ]
+      }
+    }
+    
+    
+    
+    
+    
+    
+  ];
+  
+  // Connect to your MongoDB server
+  const conn = new Mongo();
+  const db = conn.getDB('bank');
+  const collection= db.createCollection('pret');
+
+  // Insert the example documents into your collection
+  const result = db.pret.insertMany(examples);
+  print(`${result.insertedCount} documents inserted into the collection`);
+
+
+
+  //1.
+  const operatio1 = db.pret.find({ "compte.agence.NumAgence": "102" });
+  //2.
+  const operatio2 = db.pret.find({
+    "compte.agence.succursale.region": "NORD"
+  }, {
+    "NumPret": 1,
+    "compte.agence.NumAgence": 1,
+    "compte.NumCompte": 1,
+    "compte.client.NumClient": 1,
+    "montantPret": 1,
+    "_id": 0
+  }).pretty();
+
+  //3.
+  const operatio3 = db.pret.aggregate([
+    {
+      $group: {
+        _id: "$compte.agence.NumAgence",
+        NbPrêts: { $sum: 1 }
+      }
+    },
+    {
+      $sort: { NbPrêts: -1 }
+    },
+    {
+      $out: "Agence-NbPrêts" // Créez une nouvelle collection pour stocker les résultats
+    }
+  ]);
+  
+  // Affichez le contenu de la nouvelle collection
+  db.getCollection("Agence-NbPrêts").find();
+
+  //4.
+  let pretsANSEJ = db.pret.find({
+    "pret.typePret": "ANSEJ"
+  }, {
+    "pret.NumPret": 1,
+    "pret.compte.client.NumClient": 1,
+    "pret.montantPret": 1,
+    "pret.dateEffet": 1,
+    "_id": 0
+  }).toArray();
+  
+  // Créez une nouvelle collection pret-ansej et insérez les prêts récupérés
+  const operatio4Creation =db.createCollection("pret-ansej");
+  const operatio4Insertion =db.getCollection("pret-ansej").insertMany(pretsANSEJ);
+
+  //5.
+  const operatio5 = db.pret.find(
+    { "compte.client.TypeClient": "Particulier" },
+    { "compte.client.NumClient": 1, "compte.client.NomClient": 1, "NumPret": 1, "montantPret": 1, "_id": 0 }
+  );
+
+  //6.
+
+  const operatio6 = db.pret.updateMany(
+    { "dateEffet": { $lt: "2021-01-01" }, "montantEcheance": { $ne: 0 } },
+    { $inc: { "montantEcheance": 2000 } }
+  );
+//7.
+// Définition de la fonction de mappage
+var mapFunction = function() {
+  emit(this.compte.agence.NumAgence, 1);
+};
+
+// Définition de la fonction de réduction
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+// Exécution de l'opération Map-Reduce
+db.pret.mapReduce(
+  mapFunction,
+  reduceFunction,
+  { out: "Agence-NbPrêts2" }
+);
+
+// Trier les résultats par ordre décroissant du nombre total de prêts
+db["Agence-NbPrêts2"].find().sort({ value: -1 });
+
+// Afficher le contenu de la collection
+db["Agence-NbPrêts2"].find();
+//8.
+// Exécuter une agrégation pour récupérer les opérations de crédit sur les comptes des clients de type "Entreprise" en 2023
+db.pret.find(db.pret.aggregate([
+  {
+    $match: {
+      NatureOperation: "Retrait",
+      DateOp: { $gte: "2023-01-01", $lt: "2024-01-01" }
+    }
+  },
+  {
+    $lookup: {
+      from: "Compte",
+      localField: "NumCompte",
+      foreignField: "NumCompte",
+      as: "compteInfo"
+    }
+  },
+  {
+    $unwind: "$compteInfo"
+  },
+  {
+    $lookup: {
+      from: "Client",
+      localField: "compteInfo.NumClient",
+      foreignField: "NumClient",
+      as: "clientInfo"
+    }
+  },
+  {
+    $unwind: "$clientInfo"
+  },
+  {
+    $match: {
+      "clientInfo.TypeClient": "Entreprise"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      NumOperation: 1,
+      NatureOperation: 1,
+      montantOp: 1,
+      DateOp: 1,
+      NumCompte: "$compteInfo.NumCompte",
+      NomClient: "$clientInfo.NomClient",
+      TypeClient: "$clientInfo.TypeClient"
+    }
+  }
+]));
+
+
+db.pret.aggregate(
+  {
+    
+      $match: {
+        "compte.Operations.NatureOperation": "Retrait",
+        "compte.Operations.DateOp": { $gte: "2023-01-01", $lt: "2024-01-01" },
+        "compte.client.TypeClient": "Entreprise"
+      },
+    
+       
+  });
+
+ 
+  
+  
